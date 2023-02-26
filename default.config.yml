@@ -2,16 +2,17 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
-configure_terminal: true
+configure_terminal: false
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false
-dockitems_remove: []
+dockitems_remove:
+ - TV
+ - Podcasts
 # - Launchpad
-# - TV
-# - Podcasts
 # - 'App Store'
+#
 dockitems_persist: []
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
@@ -24,65 +25,81 @@ sudoers_custom_config: ''
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/TrojaAnsible/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
 dotfiles_files:
-  - .zshrc
   - .gitignore
   - .inputrc
   - .osx
   - .vimrc
+  #- .zshrc
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
-  - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
+  #- autoconf
+  #- bash-completion
+  #- doxygen
+  #- gettext
+  #- gifsicle
   - git
-  - github/gh/gh
-  - go
+  #- github/gh/gh
+  #- go
   - gpg
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
-  - node
-  - nvm
-  - php
-  - ssh-copy-id
-  - cowsay
-  - readline
-  - openssl
-  - pv
-  - wget
-  - wrk
-  - zsh-history-substring-search
+  #- httpie
+  #- iperf
+  #- libevent
+  #- sqlite
+  #- mcrypt
+  #- nmap
+  #- node
+  #- nvm
+  #- php
+  #- ssh-copy-id
+  #- cowsay
+  #- readline
+  #- openssl
+  #- pv
+  #- wget
+  #- wrk
+  #- zsh-history-substring-search
 
-homebrew_taps:
-  - homebrew/core
-  - homebrew/cask
+homebrew_taps: []
+  #- homebrew/core
+  #- homebrew/cask
 
 homebrew_cask_appdir: /Applications
-homebrew_cask_apps:
-  - chromedriver
-  - docker
-  - dropbox
-  - firefox
-  - google-chrome
-  - handbrake
-  - licecap
-  - sequel-ace
-  - slack
-  - sublime-text
-  - transmit
+homebrew_cask_apps: []
+  #- chromedriver
+  #- docker
+  #- dropbox
+  #- firefox
+  #- google-chrome
+  #- handbrake
+  #- licecap
+  #- sequel-ace
+  #- slack
+  #- sublime-text
+  #- transmit
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+#
+# peter@apollon:mac-dev-playbook$ mas list
+# 408981434   iMovie      (10.3.3)
+# 409183694   Keynote     (12.0)
+# 682658836   GarageBand  (10.4.6)
+# 409201541   Pages       (12.0)
+# 409203825   Numbers     (12.0)
+#
+# peter@apollon:mac-dev-playbook$ mas search iSkysoft --price
+#    630467499  iSkysoft Video Converter  $35.99  (11.5.1)
+#    628268625  iSkysoft DVD Ripper       $17.99  (4.0.0)
+#
+#
+mas_installed_apps:
+  - { id: 630467499, name: "iSkysoft Video Converter" }
+  #- { id: 1501308038, name: "Better Rename 11" }
+
 mas_email: ""
 mas_password: ""
 
